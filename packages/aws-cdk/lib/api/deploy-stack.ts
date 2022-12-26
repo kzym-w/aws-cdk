@@ -21,6 +21,8 @@ import {
 } from './util/cloudformation';
 import { StackActivityMonitor, StackActivityProgress } from './util/cloudformation/stack-activity-monitor';
 
+import * as path from 'path';
+
 type TemplateBodyParameter = {
   TemplateBody?: string
   TemplateURL?: string
