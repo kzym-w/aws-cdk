@@ -592,7 +592,8 @@ async function makeBodyParameter(
   if (overrideTemplate) {
     // Add a variant of this template
     templateFile = `${stack.templateFile}-${templateHash}.yaml`;
-    await fs.writeFile(templateFile, templateJson, { encoding: 'utf-8' });
+    await fs.writeFile(path.join(stack.assembly.directory, templateFile), templateJson, { encoding: 'utf-8' });  //https://github.com/aws/aws-cdk/issues/22928
+    //await fs.writeFile(templateFile, templateJson, { encoding: 'utf-8' });
   }
 
   assetManifest.addFileAsset(templateHash, {
