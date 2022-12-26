@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as cxapi from '@aws-cdk/cx-api';
 import type { CloudFormation } from 'aws-sdk';
 import * as chalk from 'chalk';
@@ -20,8 +21,6 @@ import {
   waitForStackDeploy, waitForStackDelete, ParameterValues, ParameterChanges, ResourcesToImport,
 } from './util/cloudformation';
 import { StackActivityMonitor, StackActivityProgress } from './util/cloudformation/stack-activity-monitor';
-
-import * as path from 'path';
 
 type TemplateBodyParameter = {
   TemplateBody?: string
